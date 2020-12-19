@@ -1,14 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const http = require("http");
+const serverModule_1 = require("./serverModule");
 class Main {
     constructor() {
-        const server = http.createServer((request, response) => this.requestHandler(request, response));
-        server.listen("5000");
-        console.log("http://localhost:5000");
-    }
-    requestHandler(request, response) {
-        response.end("Hello! Node.js with typescript");
+        const Server = new serverModule_1.ServerAPI();
+        Server.initServer();
     }
 }
 new Main();
