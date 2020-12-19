@@ -1,8 +1,8 @@
 import * as http from "http";
 
-class Main {
-    constructor() {
-        const server: http.Server = http.createServer(
+export class ServerAPI {
+    public initServer(): void {
+        const server = http.createServer(
             (request: http.IncomingMessage, response: http.ServerResponse) =>
                 this.requestHandler(request, response)
         );
